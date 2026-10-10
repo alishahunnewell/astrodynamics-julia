@@ -33,7 +33,7 @@ LOG.md                     Dated learning log
 
 ## Roadmap
 
-- [ ] Two-body propagator with energy and angular momentum conservation checks
+- [x] Two-body propagator with energy and angular momentum conservation checks
 - [ ] Kepler's equation solver
 - [ ] State vector <-> orbital element conversion
 - [ ] Validation against SpaceAGORA (perturbations off)
