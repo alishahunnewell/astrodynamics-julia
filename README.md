@@ -1,6 +1,6 @@
 # Astrodynamics from Scratch (Julia)
 
-A public learning log and code repo: I'm building core astrodynamics tools in Julia from first principles and validating each one against SpaceAGORA, the aerobraking simulator from the Space-FALCON Lab at the University of Michigan. This is an independent self-study project and is not affiliated with or part of SpaceAGORA.
+A public learning log and code repo: I'm working through orbital mechanics by coding each concept in Julia and checking it against SpaceAGORA, the aerobraking simulator from the Space-FALCON Lab at the University of Michigan. This is an independent self-study project and is not affiliated with SpaceAGORA.
 
 ## Goal
 
