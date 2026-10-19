@@ -6,11 +6,22 @@ Not implemented yet; this comes after the ch. 4 reading."""
 """ rv2coe(r, v; mu=398600.4418)
 Convert position/velocity vectors to classical orbital elements.
 """
+#problem at hand is that simulators describe a position vector w
+#six numbers changing at every instant, good for integration but they
+#do not encode information for a person like how large an orbit is, how tilted
+#or where perigree is
+
+#solution is to convert instantaneous state into the six orbital elements
+#to describe the orbit's size(a), shape(e), orientation(i,Ω, ω) and where 
+#spacecraft is on orbit (v), in pure two body motion the first never change, 
+#r and v continue to change and cannot tell what the orbit is, which is why the 
+#fixed orbital constants have more information
 function rv2coe(r, v; mu=398600.4418)
     r_mag = norm(r)
     v_mag = norm(v)
     vr = dot(r, v) / r_mag
 
+    
     h_vec = cross(r,v)
     h = norm(h_vec)
 
@@ -50,6 +61,8 @@ R3(phi) = [cos(phi) sin(phi) 0; -sin(phi) cos(phi) 0; 0 0 1]
 """coe2rv(a, e, i, Omega, omega, nu; mu=398600.4418)
 Convert classical orbital elements to position/velocity vectors.
 """
+#an integrator cannot start from a description of the orbit, it needs
+#the spacecrafts actual position and velocity in space you
 function coe2rv(a, e, i, Omega, omega, nu; mu=398600.4418)
     #angular momentum 
     h = sqrt(mu * a * (1 - e^2))
