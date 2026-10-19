@@ -64,7 +64,6 @@ Convert classical orbital elements to position/velocity vectors.
 #an integrator cannot start from a description of the orbit, it needs
 #the spacecrafts actual position and velocity in space you need actual 
 #position and velocity in space,  propagate_two_body func takes in r0 v0
-
 function coe2rv(a, e, i, Omega, omega, nu; mu=398600.4418)
     #angular momentum 
     h = sqrt(mu * a * (1 - e^2))
