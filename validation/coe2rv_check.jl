@@ -1,17 +1,14 @@
 #checks for coe2rv
 include("../src/two_body_eom.jl")
 include("../src/elements_conversion.jl")
-
 #test 1 flat orbit w all angles=0 must start at perigree on +x
 #moving in +y, same as eccentric orbit test 
-
 rp, ra = 7000.0, 20000.0
 a = (rp +ra) / 2
 e = (ra - rp) / (ra + rp)
 r, v = coe2rv(a, e, 0.0, 0.0, 0.0, 0.0; mu=MU_EARTH)
 println("Test 1 r: ", r, "   expected [7000, 0, 0]")
 println("Test 1 v: ", v, "   expected [0, ", sqrt(MU_EARTH * (2/rp - 1/a)), ", 0]")
-
 #test two tilted orbit to check physics holds for any angles 
 i, Ω, ω, ν = deg2rad(30), deg2rad(40), deg2rad(60), deg2rad(100)
 r, v = coe2rv(a, e, i, Ω, ω, ν; mu=MU_EARTH)
